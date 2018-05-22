@@ -18,11 +18,9 @@ import (
 	"fmt"
 )
 
-
 var (
 	ErrClientRegister = 95003
 	ErrAgentConnect   = 95004
-
 )
 
 func getErrorMessage(code int) (string) {
@@ -73,7 +71,7 @@ func main() {
 	srv.RoutePush(new(Register))
 	go srv.ListenAndServe(jsonproto.NewJsonProtoFunc)
 
-	ticker := time.NewTicker(5*time.Second)
+	ticker := time.NewTicker(5 * time.Second)
 	go func() {
 		for _ = range ticker.C {
 			util.Llog.Info(srv.CountSession())
@@ -116,7 +114,6 @@ func (h *Register) Index(args *map[string]interface{}) (*tp.Rerror) {
 	return nil
 }
 
-
 // 客户端离开， 写入redis
 func (h *Register) Leave(args *map[string]interface{}) (*tp.Rerror) {
 
@@ -137,6 +134,7 @@ func (h *Register) Leave(args *map[string]interface{}) (*tp.Rerror) {
 type Home struct {
 	tp.PushCtx
 }
+
 // ping
 func (h *Home) ping(args *map[string]interface{}) (*tp.Rerror) {
 
@@ -152,10 +150,10 @@ func (h *Home) ping(args *map[string]interface{}) (*tp.Rerror) {
 // 消费nsq消息队列
 func consumeNsq() {
 
-	agentNum, _:=config.Int("biz.agentNum")
+	agentNum, _ := config.Int("biz.agentNum")
 
-	for{
-		if agentNum == svrInfo.srv.CountSession(){  // agent 连上来了
+	for {
+		if agentNum == svrInfo.srv.CountSession() { // agent 连上来了
 			break
 		}
 		select {
@@ -214,7 +212,7 @@ func (h *ConsumerHandle) HandleMessage(message *nsq.Message) error {
 	barid := gjson.Get(body, "barid").String()
 	biz := gjson.Get(body, "biz").String()
 
-	route, err := redis.String(svrInfo.rpool.Get().Do("HGET",util.ClientInfoKey, barid+biz, ))
+	route, err := redis.String(svrInfo.rpool.Get().Do("HGET", util.ClientInfoKey, barid+biz, ))
 	if err != nil {
 		util.Llog.Error(barid+biz, body, "get route in redis error", err)
 		return err
@@ -230,10 +228,9 @@ func (h *ConsumerHandle) HandleMessage(message *nsq.Message) error {
 		return err
 	}
 
-
 	sess, ok := svrInfo.srv.GetSession(agentId)
 	if !ok {
-		util.Llog.Error("获取session 失败",barid, biz,  route, agentId)
+		util.Llog.Error("获取session 失败", barid, biz, route, agentId)
 		return errors.New("获取session 失败")
 	}
 
@@ -244,7 +241,6 @@ func (h *ConsumerHandle) HandleMessage(message *nsq.Message) error {
 			"body":       body,
 		},
 		&reply,
-		// tp.WithAcceptBodyCodec('s'),
 	).Rerror()
 
 	if rerr != nil {

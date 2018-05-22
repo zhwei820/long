@@ -753,3 +753,61 @@ INFO example 15:35:42.295 back/long/biz/biz.go:79 ▶ 01c 1
 INFO example 15:35:42.295 back/long/biz/biz.go:81 ▶ 01d 192.168.1.5:35852
 INFO example 15:35:47.295 back/long/biz/biz.go:79 ▶ 01e 1
 INFO example 15:35:47.295 back/long/biz/biz.go:81 ▶ 01f 192.168.1.5:35852
+INFO example 15:35:52.295 back/long/biz/biz.go:79 ▶ 020 1
+INFO example 15:35:52.295 back/long/biz/biz.go:81 ▶ 021 192.168.1.5:35852
+INFO example 15:35:57.295 back/long/biz/biz.go:79 ▶ 022 1
+INFO example 15:35:57.295 back/long/biz/biz.go:81 ▶ 023 192.168.1.5:35852
+INFO example 15:36:02.295 back/long/biz/biz.go:79 ▶ 024 1
+INFO example 15:36:02.295 back/long/biz/biz.go:81 ▶ 025 192.168.1.5:35852
+INFO example 15:36:07.295 back/long/biz/biz.go:79 ▶ 026 1
+INFO example 15:36:07.295 back/long/biz/biz.go:81 ▶ 027 192.168.1.5:35852
+INFO example 15:36:12.295 back/long/biz/biz.go:79 ▶ 028 1
+INFO example 15:36:12.295 back/long/biz/biz.go:81 ▶ 029 192.168.1.5:35852
+INFO example 15:36:17.295 back/long/biz/biz.go:79 ▶ 02a 1
+INFO example 15:36:17.295 back/long/biz/biz.go:81 ▶ 02b 192.168.1.5:35852
+INFO example 15:36:22.295 back/long/biz/biz.go:79 ▶ 02c 1
+INFO example 15:36:22.295 back/long/biz/biz.go:81 ▶ 02d 192.168.1.5:35852
+INFO example 15:36:27.295 back/long/biz/biz.go:79 ▶ 02e 1
+INFO example 15:36:27.295 back/long/biz/biz.go:81 ▶ 02f 192.168.1.5:35852
+INFO example 15:36:32.295 back/long/biz/biz.go:79 ▶ 030 1
+INFO example 15:36:32.295 back/long/biz/biz.go:81 ▶ 031 192.168.1.5:35852
+INFO example 15:36:37.295 back/long/biz/biz.go:79 ▶ 032 1
+INFO example 15:36:37.295 back/long/biz/biz.go:81 ▶ 033 192.168.1.5:35852
+INFO example 15:36:42.295 back/long/biz/biz.go:79 ▶ 034 1
+INFO example 15:36:42.295 back/long/biz/biz.go:81 ▶ 035 192.168.1.5:35852
+INFO example 15:36:47.295 back/long/biz/biz.go:79 ▶ 036 1
+INFO example 15:36:47.295 back/long/biz/biz.go:81 ▶ 037 192.168.1.5:35852
+INFO example 15:36:52.295 back/long/biz/biz.go:79 ▶ 038 1
+INFO example 15:36:52.295 back/long/biz/biz.go:81 ▶ 039 192.168.1.5:35852
+INFO example 15:36:57.295 back/long/biz/biz.go:79 ▶ 03a 1
+INFO example 15:36:57.296 back/long/biz/biz.go:81 ▶ 03b 192.168.1.5:35852
+INFO example 15:37:02.295 back/long/biz/biz.go:79 ▶ 03c 1
+INFO example 15:37:02.295 back/long/biz/biz.go:81 ▶ 03d 192.168.1.5:35852
+INFO example 15:37:07.295 back/long/biz/biz.go:79 ▶ 03e 1
+INFO example 15:37:07.295 back/long/biz/biz.go:81 ▶ 03f 192.168.1.5:35852
+INFO example 15:37:12.295 back/long/biz/biz.go:79 ▶ 040 1
+INFO example 15:37:12.295 back/long/biz/biz.go:81 ▶ 041 192.168.1.5:35852
+INFO example 15:37:17.295 back/long/biz/biz.go:79 ▶ 042 1
+INFO example 15:37:17.295 back/long/biz/biz.go:81 ▶ 043 192.168.1.5:35852
+INFO example 15:37:22.295 back/long/biz/biz.go:79 ▶ 044 1
+INFO example 15:37:22.295 back/long/biz/biz.go:81 ▶ 045 192.168.1.5:35852
+INFO example 15:37:27.295 back/long/biz/biz.go:79 ▶ 046 1
+INFO example 15:37:27.295 back/long/biz/biz.go:81 ▶ 047 192.168.1.5:35852
+INFO example 15:37:32.295 back/long/biz/biz.go:79 ▶ 048 1
+INFO example 15:37:32.295 back/long/biz/biz.go:81 ▶ 049 192.168.1.5:35852
+INFO example 15:37:37.295 back/long/biz/biz.go:79 ▶ 04a 1
+INFO example 15:37:37.295 back/long/biz/biz.go:81 ▶ 04b 192.168.1.5:35852
+INFO example 15:37:40.745 back/long/client/client2.go:234 ▶ 004 Received an interrupt , stoping service ...
+ERRO example 15:37:40.745 back/long/client/client2.go:157 ▶ 005 连接关闭 192.168.1.5:46314 ---> 192.168.1.5:9090 
+ERRO example 15:37:40.745 back/long/client/client2.go:110 ▶ 006 连接关闭 192.168.1.5:46314 ---> 192.168.1.5:9090 
+INFO example 15:37:40.746 back/long/client/client2.go:142 ▶ 007 {"seq":"1526974660","ptype":2,"uri":"/home/leave","meta":"","body_codec":106,"body":"{\"code\":0}"}
+ERRO example 15:37:40.746 back/long/client/client2.go:124 ▶ 008 192.168.1.5:46314 ---> 192.168.1.5:9090  clientReadLoop err: send on closed channel
+INFO example 15:37:41.745 back/long/client/client2.go:60 ▶ 009 关闭连接完成!! 192.168.1.5:46314 ---> 192.168.1.5:9090 
+INFO example 15:37:42.295 back/long/biz/biz.go:79 ▶ 04d 1
+INFO example 15:37:42.295 back/long/biz/biz.go:81 ▶ 04e 192.168.1.5:35852
+INFO example 15:37:43.961 back/long/agent/agent.go:72 ▶ 025 Received an interrupt , stoping service ...
+INFO example 15:37:43.961 back/long/agent/agent.go:80 ▶ 026 Shutdown server....
+INFO example 15:37:47.295 back/long/biz/biz.go:79 ▶ 04f 0
+INFO example 15:37:47.457 back/long/biz/biz.go:182 ▶ 050 Received an interrupt , stoping service ...
+INFO example 15:37:47.457 back/long/biz/biz.go:192 ▶ 051 Shutdown server....
+INFO example 15:37:47.457 back/long/biz/biz.go:90 ▶ 052 Ticker stopped
