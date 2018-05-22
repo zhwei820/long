@@ -663,3 +663,93 @@ INFO example 15:32:28.245 back/long/biz/biz.go:79 ▶ 28c 1
 INFO example 15:32:28.245 back/long/biz/biz.go:81 ▶ 28d 192.168.1.5:35262
 INFO example 15:32:33.245 back/long/biz/biz.go:79 ▶ 28e 1
 INFO example 15:32:33.245 back/long/biz/biz.go:81 ▶ 28f 192.168.1.5:35262
+INFO example 15:32:38.245 back/long/biz/biz.go:79 ▶ 290 1
+INFO example 15:32:38.245 back/long/biz/biz.go:81 ▶ 291 192.168.1.5:35262
+INFO example 15:32:43.245 back/long/biz/biz.go:79 ▶ 292 1
+INFO example 15:32:43.245 back/long/biz/biz.go:81 ▶ 293 192.168.1.5:35262
+INFO example 15:32:48.245 back/long/biz/biz.go:79 ▶ 294 1
+INFO example 15:32:48.245 back/long/biz/biz.go:81 ▶ 295 192.168.1.5:35262
+INFO example 15:32:53.245 back/long/biz/biz.go:79 ▶ 296 1
+INFO example 15:32:53.245 back/long/biz/biz.go:81 ▶ 297 192.168.1.5:35262
+INFO example 15:32:58.245 back/long/biz/biz.go:79 ▶ 298 1
+INFO example 15:32:58.245 back/long/biz/biz.go:81 ▶ 299 192.168.1.5:35262
+INFO example 15:33:03.245 back/long/biz/biz.go:79 ▶ 29a 1
+INFO example 15:33:03.245 back/long/biz/biz.go:81 ▶ 29b 192.168.1.5:35262
+INFO example 15:33:08.245 back/long/biz/biz.go:79 ▶ 29c 1
+INFO example 15:33:08.246 back/long/biz/biz.go:81 ▶ 29d 192.168.1.5:35262
+INFO example 15:33:13.245 back/long/biz/biz.go:79 ▶ 29e 1
+INFO example 15:33:13.245 back/long/biz/biz.go:81 ▶ 29f 192.168.1.5:35262
+INFO example 15:33:18.245 back/long/biz/biz.go:79 ▶ 2a0 1
+INFO example 15:33:18.245 back/long/biz/biz.go:81 ▶ 2a1 192.168.1.5:35262
+INFO example 15:33:23.245 back/long/biz/biz.go:79 ▶ 2a2 1
+INFO example 15:33:23.245 back/long/biz/biz.go:81 ▶ 2a3 192.168.1.5:35262
+INFO example 15:33:28.245 back/long/biz/biz.go:79 ▶ 2a4 1
+INFO example 15:33:28.245 back/long/biz/biz.go:81 ▶ 2a5 192.168.1.5:35262
+INFO example 15:33:33.245 back/long/biz/biz.go:79 ▶ 2a6 1
+INFO example 15:33:33.245 back/long/biz/biz.go:81 ▶ 2a7 192.168.1.5:35262
+INFO example 15:33:38.245 back/long/biz/biz.go:79 ▶ 2a8 1
+INFO example 15:33:38.246 back/long/biz/biz.go:81 ▶ 2a9 192.168.1.5:35262
+INFO example 15:33:43.245 back/long/biz/biz.go:79 ▶ 2aa 1
+INFO example 15:33:43.245 back/long/biz/biz.go:81 ▶ 2ab 192.168.1.5:35262
+INFO example 15:33:48.245 back/long/biz/biz.go:79 ▶ 2ac 1
+INFO example 15:33:48.245 back/long/biz/biz.go:81 ▶ 2ad 192.168.1.5:35262
+INFO example 15:33:53.245 back/long/biz/biz.go:79 ▶ 2ae 1
+INFO example 15:33:53.245 back/long/biz/biz.go:81 ▶ 2af 192.168.1.5:35262
+INFO example 15:33:58.245 back/long/biz/biz.go:79 ▶ 2b0 1
+INFO example 15:33:58.245 back/long/biz/biz.go:81 ▶ 2b1 192.168.1.5:35262
+INFO example 15:34:03.245 back/long/biz/biz.go:79 ▶ 2b2 1
+INFO example 15:34:03.245 back/long/biz/biz.go:81 ▶ 2b3 192.168.1.5:35262
+INFO example 15:34:08.245 back/long/biz/biz.go:79 ▶ 2b4 1
+INFO example 15:34:08.245 back/long/biz/biz.go:81 ▶ 2b5 192.168.1.5:35262
+INFO example 15:34:13.245 back/long/biz/biz.go:79 ▶ 2b6 1
+INFO example 15:34:13.245 back/long/biz/biz.go:81 ▶ 2b7 192.168.1.5:35262
+INFO example 15:34:18.245 back/long/biz/biz.go:79 ▶ 2b8 1
+INFO example 15:34:18.245 back/long/biz/biz.go:81 ▶ 2b9 192.168.1.5:35262
+INFO example 15:34:23.245 back/long/biz/biz.go:79 ▶ 2ba 1
+INFO example 15:34:23.245 back/long/biz/biz.go:81 ▶ 2bb 192.168.1.5:35262
+INFO example 15:34:28.245 back/long/biz/biz.go:79 ▶ 2bc 1
+INFO example 15:34:28.245 back/long/biz/biz.go:81 ▶ 2bd 192.168.1.5:35262
+INFO example 15:34:33.245 back/long/biz/biz.go:79 ▶ 2be 1
+INFO example 15:34:33.245 back/long/biz/biz.go:81 ▶ 2bf 192.168.1.5:35262
+INFO example 15:34:38.245 back/long/biz/biz.go:79 ▶ 2c0 1
+INFO example 15:34:38.245 back/long/biz/biz.go:81 ▶ 2c1 192.168.1.5:35262
+INFO example 15:34:43.245 back/long/biz/biz.go:79 ▶ 2c2 1
+INFO example 15:34:43.245 back/long/biz/biz.go:81 ▶ 2c3 192.168.1.5:35262
+INFO example 15:34:48.245 back/long/biz/biz.go:79 ▶ 2c4 1
+INFO example 15:34:48.245 back/long/biz/biz.go:81 ▶ 2c5 192.168.1.5:35262
+INFO example 15:34:51.090 back/long/biz/biz.go:182 ▶ 2c6 Received an interrupt , stoping service ...
+INFO example 15:34:51.090 back/long/biz/biz.go:192 ▶ 2c7 Shutdown server....
+INFO example 15:34:51.090 back/long/biz/biz.go:90 ▶ 2c8 Ticker stopped
+ERRO example 15:34:51.418 back/long/agent/agent.go:211 ▶ 017 biz agent 重连失败！！ {"code":105,"message":"Dial Failed","detail":"dial tcp 192.168.1.5:9099: getsockopt: connection refused"} 192.168.1.5:9099
+ERRO example 15:34:52.422 back/long/agent/agent.go:211 ▶ 018 biz agent 重连失败！！ {"code":105,"message":"Dial Failed","detail":"dial tcp 192.168.1.5:9099: getsockopt: connection refused"} 192.168.1.5:9099
+ERRO example 15:34:53.422 back/long/agent/agent.go:211 ▶ 019 biz agent 重连失败！！ {"code":105,"message":"Dial Failed","detail":"dial tcp 192.168.1.5:9099: getsockopt: connection refused"} 192.168.1.5:9099
+ERRO example 15:34:54.422 back/long/agent/agent.go:211 ▶ 01a biz agent 重连失败！！ {"code":105,"message":"Dial Failed","detail":"dial tcp 192.168.1.5:9099: getsockopt: connection refused"} 192.168.1.5:9099
+ERRO example 15:34:55.422 back/long/agent/agent.go:211 ▶ 01b biz agent 重连失败！！ {"code":105,"message":"Dial Failed","detail":"dial tcp 192.168.1.5:9099: getsockopt: connection refused"} 192.168.1.5:9099
+ERRO example 15:34:56.423 back/long/agent/agent.go:211 ▶ 01c biz agent 重连失败！！ {"code":105,"message":"Dial Failed","detail":"dial tcp 192.168.1.5:9099: getsockopt: connection refused"} 192.168.1.5:9099
+INFO example 15:34:57.294 back/long/biz/biz.go:57 ▶ 001 init log done.
+ERRO example 15:34:57.424 back/long/agent/agent.go:223 ▶ 01f biz agent 重连成功！！ 192.168.1.5:9099
+WARN example 15:34:58.295 back/long/biz/biz.go:163 ▶ 009 waiting for agent!!
+INFO example 15:34:58.295 back/long/biz/biz.go:176 ▶ 00a server is running....
+INFO example 15:35:02.295 back/long/biz/biz.go:79 ▶ 00b 1
+INFO example 15:35:02.295 back/long/biz/biz.go:81 ▶ 00c 192.168.1.5:35852
+INFO example 15:35:07.295 back/long/biz/biz.go:79 ▶ 00d 1
+INFO example 15:35:07.295 back/long/biz/biz.go:81 ▶ 00e 192.168.1.5:35852
+INFO example 15:35:12.295 back/long/biz/biz.go:79 ▶ 00f 1
+INFO example 15:35:12.295 back/long/biz/biz.go:81 ▶ 010 192.168.1.5:35852
+INFO example 15:35:17.295 back/long/biz/biz.go:79 ▶ 011 1
+INFO example 15:35:17.296 back/long/biz/biz.go:81 ▶ 012 192.168.1.5:35852
+INFO example 15:35:22.295 back/long/biz/biz.go:79 ▶ 013 1
+INFO example 15:35:22.295 back/long/biz/biz.go:81 ▶ 014 192.168.1.5:35852
+INFO example 15:35:22.311 back/long/client/client2.go:209 ▶ 001 client is running....
+INFO example 15:35:22.312 back/long/client/client2.go:142 ▶ 002 {"seq":"1526974522","ptype":2,"uri":"/home/index","meta":"","body_codec":106,"body":"{\"code\":0}"}
+INFO example 15:35:22.312 back/long/client/client2.go:162 ▶ 003 {"seq":"1526974522","ptype":2,"uri":"/home/index","meta":"","body_codec":106,"body":"{\"code\":0}"}
+INFO example 15:35:27.295 back/long/biz/biz.go:79 ▶ 016 1
+INFO example 15:35:27.295 back/long/biz/biz.go:81 ▶ 017 192.168.1.5:35852
+INFO example 15:35:32.295 back/long/biz/biz.go:79 ▶ 018 1
+INFO example 15:35:32.295 back/long/biz/biz.go:81 ▶ 019 192.168.1.5:35852
+INFO example 15:35:37.295 back/long/biz/biz.go:79 ▶ 01a 1
+INFO example 15:35:37.295 back/long/biz/biz.go:81 ▶ 01b 192.168.1.5:35852
+INFO example 15:35:42.295 back/long/biz/biz.go:79 ▶ 01c 1
+INFO example 15:35:42.295 back/long/biz/biz.go:81 ▶ 01d 192.168.1.5:35852
+INFO example 15:35:47.295 back/long/biz/biz.go:79 ▶ 01e 1
+INFO example 15:35:47.295 back/long/biz/biz.go:81 ▶ 01f 192.168.1.5:35852
