@@ -69,6 +69,8 @@ func main() {
 	}
 
 	srv.RoutePush(new(Register))
+	srv.RoutePush(new(Home))
+
 	go srv.ListenAndServe(jsonproto.NewJsonProtoFunc)
 
 	ticker := time.NewTicker(5 * time.Second)
@@ -103,7 +105,9 @@ func (h *Register) Index(args *map[string]interface{}) (*tp.Rerror) {
 	clientAddr := (*args)["clientAddr"].(string)
 
 	route := strings.Split(h.Session().Id(), ":")[0] + sep + clientAddr
-	_, err := svrInfo.rpool.Get().Do("HSET", util.ClientInfoKey, barid+biz, route) // 记录客户端路由信息
+	rc := svrInfo.rpool.Get()
+	defer rc.Close()
+	_, err := rc.Do("HSET", util.ClientInfoKey, barid+biz, route) // 记录客户端路由信息
 	if err != nil {
 		util.Llog.Error(err)
 		util.Llog.Error("客户端注册， 写入redis失败！", barid, biz, strings.Split(h.Session().Id(), ":")[0])
@@ -119,8 +123,9 @@ func (h *Register) Leave(args *map[string]interface{}) (*tp.Rerror) {
 
 	barid := (*args)["barid"].(string)
 	biz := (*args)["biz"].(string)
-
-	_, err := svrInfo.rpool.Get().Do("HDEL", util.ClientInfoKey, barid+biz) // 记录客户端路由信息
+	rc := svrInfo.rpool.Get()
+	defer rc.Close()
+	_, err := rc.Do("HDEL", util.ClientInfoKey, barid+biz) // 记录客户端路由信息
 	if err != nil {
 		util.Llog.Error(err)
 		util.Llog.Error("客户端离开， 写入redis失败！", barid, biz, strings.Split(h.Session().Id(), ":")[0])
@@ -136,9 +141,10 @@ type Home struct {
 }
 
 // ping
-func (h *Home) ping(args *map[string]interface{}) (*tp.Rerror) {
-
-	_, err := svrInfo.rpool.Get().Do("SET", strings.Split(h.Session().Id(), ":")[0], h.Session().Id()) // set agent id
+func (h *Home) Ping(args *map[string]interface{}) (*tp.Rerror) {
+	rc := svrInfo.rpool.Get()
+	defer rc.Close()
+	_, err := rc.Do("SET", strings.Split(h.Session().Id(), ":")[0], h.Session().Id()) // set agent id
 	if err != nil {
 		util.Llog.Error("set agentId in redis error", err, h.Session().Id())
 		return tp.NewRerror(int32(ErrAgentConnect), getErrorMessage(ErrAgentConnect), "set agentId in redis error")
@@ -211,8 +217,10 @@ func (h *ConsumerHandle) HandleMessage(message *nsq.Message) error {
 	body := string(message.Body)
 	barid := gjson.Get(body, "barid").String()
 	biz := gjson.Get(body, "biz").String()
-
-	route, err := redis.String(svrInfo.rpool.Get().Do("HGET", util.ClientInfoKey, barid+biz, ))
+	data := gjson.Get(body, "data").String()
+	rc := svrInfo.rpool.Get()
+	defer rc.Close()
+	route, err := redis.String(rc.Do("HGET", util.ClientInfoKey, barid+biz, ))
 	if err != nil {
 		util.Llog.Error(barid+biz, body, "get route in redis error", err)
 		return err
@@ -222,7 +230,7 @@ func (h *ConsumerHandle) HandleMessage(message *nsq.Message) error {
 		util.Llog.Error(barid+biz, body, "addr: ", addrs)
 		return err
 	}
-	agentId, err := redis.String(svrInfo.rpool.Get().Do("GET", addrs[0], )) // get agent id
+	agentId, err := redis.String(rc.Do("GET", addrs[0], )) // get agent id
 	if err != nil {
 		util.Llog.Error(barid+biz, body, "get agentId in redis error", err)
 		return err
@@ -237,18 +245,21 @@ func (h *ConsumerHandle) HandleMessage(message *nsq.Message) error {
 	var reply map[string]interface{}
 	rerr := sess.Pull("/handle/biz",
 		map[string]interface{}{
+			"barid":      barid,
+			"biz":        biz,
+			"data":       data,
 			"clientAddr": addrs[1],
-			"body":       body,
 		},
 		&reply,
 	).Rerror()
 
 	if rerr != nil {
-		util.Llog.Error("%v", rerr)
+		util.Llog.Error( rerr)
 		return errors.New(rerr.Message + " " + rerr.Detail)
 	}
-	if reply["code"] != 0 {
-		util.Llog.Error("%v", rerr)
+	code, ok:=reply["code"].(int)
+	if ok && code != 0 {
+		util.Llog.Error(reply, rerr)
 		return errors.New(fmt.Sprintf("reply error: %v", reply))
 	}
 

@@ -3,7 +3,6 @@ package main
 import (
 	"testing"
 	"github.com/nsqio/go-nsq"
-	"time"
 	"back/long/util"
 )
 
@@ -19,9 +18,9 @@ func TestProducer(t *testing.T) {
 	}
 	defer w1.Stop()
 	topicName := "publishtest"
-	msgCount := 10
+	msgCount := 1000000
 	for i := 0; i < msgCount; i++ {
-		time.Sleep(time.Millisecond * 15)
+		//time.Sleep(time.Millisecond * 15)
 
 		err1 := w1.Publish(topicName, []byte("{\"barid\":\"10001\",\"biz\":\"voice\",\"data\":\"123\"}"))
 		if err1 != nil {
