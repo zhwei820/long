@@ -11,6 +11,8 @@ import (
 
 	"back/long/util"
 	"back/long/client/lib"
+	"os"
+	"os/signal"
 )
 
 const LengthBytes = 4
@@ -49,13 +51,12 @@ func (c *ConnInfo) Close() {
 		}
 		close(c.writeChain)
 
-		c.writePacket(lib.PreparePacket(lib.Leave))  // 通知agent biz断开了
-
+		c.writePacket(lib.PreparePacket(lib.Leave)) // 通知agent biz断开了
 
 		//guarantee send all msg to client.
 		time.Sleep(time.Second)
 		c.nc.Close()
-		close(c.breakChan)  // 关闭连接结束
+		close(c.breakChan) // 关闭连接结束
 		util.Llog.Info("关闭连接完成!!", c.GetConnInfo())
 
 	})
@@ -182,7 +183,7 @@ func run(ii int) (*ConnInfo, error) {
 		closeOnce:  &sync.Once{},
 		closeChan:  make(chan int),
 		connId:     ii,
-		breakChan:make(chan int),
+		breakChan:  make(chan int),
 	}
 
 	connInfo.waitGroup.Wrap(connInfo.readLoop)
@@ -196,21 +197,45 @@ func run(ii int) (*ConnInfo, error) {
 }
 
 func main() {
+	cleanup := make(chan os.Signal)
+	signal.Notify(cleanup, os.Interrupt)
 
 	util.InitLog()
+
+	var (
+		c   *ConnInfo
+		err error
+	)
+	util.Llog.Info("client is running....") // ..
+
 	ii := 0
 	for {
-		c, err := run(ii)
+		c, err = run(ii)
 		if err != nil {
 			util.Llog.Error(err)
 			time.Sleep(1 * time.Second)
 			continue
 		}
-		<-c.breakChan
-		util.Llog.Info("breakChan")
+		select {
+		case <-c.breakChan:
+		case <-cleanup:
+			close(cleanup)
+			goto out
+		}
+		util.Llog.Info("client breaks!")
 		ii ++
-
 	}
+out:
 
-	select {}
+	quit := make(chan bool)
+	go func() {
+		select {
+		case <-cleanup:
+			util.Llog.Info("Received an interrupt , stoping service ...")
+			c.Close()
+			quit <- true
+		}
+	}()
+	<-quit
+
 }
