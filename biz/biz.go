@@ -170,10 +170,9 @@ func consumeNsq() {
 	}
 
 	topicName := "publishtest"
-	channelCount := 2
-	for i := 0; i < channelCount; i++ {
-		go readMessage(topicName, i)
-	}
+
+	go readMessage(topicName, 0)
+
 
 	cleanup := make(chan os.Signal)
 	signal.Notify(cleanup, os.Interrupt)
