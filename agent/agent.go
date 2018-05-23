@@ -42,7 +42,7 @@ var svrInfo *ServerInfo
 var bizSessInfo *SessionInfo
 
 func main() {
-	util.InitLog() // 初始化日志
+	util.InitLog("agent") // 初始化日志
 
 	agentAddr, _ := config.String("agent.agentAddr")
 	srv := tp.NewPeer(tp.PeerConfig{ListenAddress: agentAddr})

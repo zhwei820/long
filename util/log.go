@@ -24,12 +24,12 @@ func (p Password) Redacted() interface{} {
 	return logging.Redact(string(p))
 }
 
-func InitLog() {
+func InitLog(logName string) {
 
 	backend2 := logging.NewLogBackend(os.Stderr, "", 0)
 	backend2.Color = true
 
-	backend3, err := logging.NewDefaultFileBackend("test.log")
+	backend3, err := logging.NewDefaultFileBackend(logName + ".log")
 	if err != nil {
 		panic(err)
 	}

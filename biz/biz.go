@@ -51,7 +51,7 @@ func (l *ServerInfo) Close() {
 var svrInfo *ServerInfo // 全局对象
 
 func main() {
-	util.InitLog()
+	util.InitLog("biz")
 	util.Llog.Info("init log done.")
 
 	bizAddr, _ := config.String("biz.bizAddr")

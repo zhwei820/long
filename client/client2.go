@@ -200,7 +200,7 @@ func main() {
 	cleanup := make(chan os.Signal)
 	signal.Notify(cleanup, os.Interrupt)
 
-	util.InitLog()
+	util.InitLog("client")
 
 	var (
 		c   *ConnInfo
